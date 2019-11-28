@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+}
+
+body>div:last-of-type:hover {
+  background: red;
+}
+
+#primera-caja {
+  height: 300px;
+  width: 50%;
+  display: none;
+  box-sizing: border-box;
+}
+
+.caja {
+  display: inline-block;
+  padding: 7px 3px 5px 2px;
+  margin: 2px 5px 1px 7px;
+  border: 1px solid black;
+}

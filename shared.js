@@ -1,6 +1,6 @@
-var backdrop = document.querySelector(".backdrop");
-var modal = document.querySelector(".modal");
-var mobileNav = document.querySelector('.mobile-nav');
+const backdrop = document.querySelector(".backdrop");
+const modal = document.querySelector(".modal");
+const mobileNav = document.querySelector('.mobile-nav');
 
 function showModal(show = true) {
   if (show) {

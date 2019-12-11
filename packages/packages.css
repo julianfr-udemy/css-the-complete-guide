@@ -86,3 +86,22 @@ main {
 #premium .package__subtitle {
   color: #bbb;
 }
+
+@media (min-width:40rem) {
+  main {
+    max-width: 60rem;
+  }
+}
+
+@media (min-width: 60rem) {
+  .package {
+    border-left: 4px solid #0e4f1f;
+    margin-right: auto;
+  }
+  #free {
+    border-right: 4px solid #0e4f1f;
+  }
+  #free:hover, #free:active {
+    border-right-color: #ff5454;
+  }
+}

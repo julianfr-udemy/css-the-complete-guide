@@ -1,0 +1,25 @@
+body {
+  color: white;
+  margin: 0;
+  background-color: #ddd;
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-areas: "header header" "sidebar main" "footer footer";
+  grid-gap: 10px;
+}
+
+header, aside, main, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #666;
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}

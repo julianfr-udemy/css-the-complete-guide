@@ -1,0 +1,24 @@
+body {
+  color: white;
+  margin: 0;
+  background-color: #ddd;
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 10vh 80vh 10vh;
+}
+
+header, aside, main, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #666;
+  margin: 10px;
+}
+
+header {
+  grid-column: span 2;
+}
+
+footer {
+  grid-column: span 2;
+}

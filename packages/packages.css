@@ -44,6 +44,10 @@ main {
   padding: 2rem;
 }
 
+.package:hover {
+  animation: push-up 500ms forwards;
+}
+
 .package__badge {
   position: absolute;
   top: 0;
@@ -119,5 +123,14 @@ main {
   }
   #free:hover, #free:active {
     border-right-color: #ff5454;
+  }
+}
+
+@keyframes push-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-1rem);
   }
 }

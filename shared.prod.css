@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 :root {
   --dark-green: #0e4f1f;
   --hihglight-color: #ff1b68;
@@ -5,6 +7,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Anton|Montserrat:400,700|Roboto:900');
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -13,22 +16,20 @@ html {
 }
 
 main {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2 / 3;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
-}
-
-@supports(display:grid) {
-  body {
-    margin: 0;
-    overflow-x: hidden;
-    display: grid;
-    grid-template-rows: 3.5rem auto fit-content(8rem);
-    height: 100%;
-  }
+  overflow-x: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 3.5rem auto fit-content(8rem);
+  grid-template-rows: 3.5rem auto fit-content(8rem);
+  height: 100%;
 }
 
 .backdrop {
@@ -41,6 +42,8 @@ body {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: opacity 200ms linear;
+  -o-transition: opacity 200ms linear;
   transition: opacity 200ms linear;
 }
 
@@ -48,8 +51,14 @@ body {
   background: #2ddf5c;
   width: 100%;
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   z-index: 1;
   top: 0;
@@ -104,6 +113,8 @@ body {
   background: black;
   padding: 3rem;
   margin-top: 4rem;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3 / 4;
 }
 
@@ -111,8 +122,15 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -165,14 +183,27 @@ button:focus {
   background: white;
   width: 80%;
   height: 100vh;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
   transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  -o-transition: transform 200ms;
   transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
 }
 
 .mobile-nav__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
   list-style: none;
@@ -211,10 +242,13 @@ button:focus {
 .open {
   pointer-events: auto;
   opacity: 1 !important;
+  -webkit-transform: translateY(0) !important;
+  -ms-transform: translateY(0) !important;
   transform: translateY(0) !important;
 }
 
 .main-nav__item--cta {
+  -webkit-animation: wiggle 200ms 3s 8 backwards;
   animation: wiggle 200ms 3s 8 backwards;
 }
 
@@ -231,9 +265,13 @@ button:focus {
     display: none;
   }
   .main-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   .main-nav__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0;
     padding: 0;
@@ -243,23 +281,53 @@ button:focus {
     margin: 0 1rem;
   }
   .main-footer__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+  }
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  33% {
+    -webkit-transform: rotateZ(-5deg);
+    transform: rotateZ(-5deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(5deg);
+    transform: rotateZ(5deg);
   }
 }
 
 @keyframes wiggle {
   0% {
+    -webkit-transform: rotateZ(0deg);
     transform: rotateZ(0deg);
   }
   33% {
+    -webkit-transform: rotateZ(-5deg);
     transform: rotateZ(-5deg);
   }
   66% {
+    -webkit-transform: rotateZ(0deg);
     transform: rotateZ(0deg);
   }
   100% {
+    -webkit-transform: rotateZ(5deg);
     transform: rotateZ(5deg);
   }
 }

@@ -1,0 +1,80 @@
+
+@import "_variables.sass"
+@import "typography.sass"
+
+@mixin display-flex()
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+@mixin media-min-width($width)
+  @media (min-width: $width)
+    @content
+
+html
+  font-size: 94.75%
+  @include media-min-width(40rem)
+    font-size: 125%
+
+body
+  font-family: Arial, sans-serif
+  margin: 0
+
+.container
+  @include display-flex()
+  flex:
+    direction: column
+    wrap: nowrap
+  align-items: center
+  padding: $size-default*3 0
+  box-sizing: border-box
+  @include media-min-width(40rem)
+    padding: 3rem 0
+
+.sass-section
+  border: $boder-default
+  background: lighten(map-get($colors, main), 73%)
+  text-align: center
+  width: 90%
+  box-sizing: border-box
+  @include media-min-width(40rem)
+    width: 30rem
+
+.sass-introduction
+  @extend .sass-section
+  padding: $size-default*2
+  box-shadow: $size-default/5 $size-default/5 $size-default/10 #ccc
+  p
+    margin: 0
+
+.sass-details
+  @extend .sass-section
+  padding: $size-default
+  margin: $size-default*2 0
+
+.section-header
+  border-bottom: $boder-default
+  h1
+    margin: 0 0 $size-default 0
+
+.documentation-links
+  list-style: none
+  margin: $size-default 0 0 0
+  padding: 0
+  @include display-flex()
+  flex:
+    direction: column
+  li
+    margin: $size-default/5 0
+    background: map-get($colors, white)
+  .documentation-link
+    text-decoration: none
+    color: map-get($colors, main)
+    display: block
+    padding: $size-default/5
+    border: $boder-default
+    &:hover, &:active
+      color: map-get($colors, white)
+      background: map-get($colors, secondary)
+      border-color: map-get($colors, secondary)
